@@ -1,0 +1,70 @@
+/* Modal dialog styles */
+.site-modal {
+	padding: 0;
+	border: 0;
+	border-radius: 8px;
+	--modal-max-width: 720px;
+	max-width: var(--modal-max-width);
+	width: clamp(320px, 96vw, var(--modal-max-width));
+	background: transparent;
+	color: inherit;
+	box-shadow: 5px 5px 10px 5px hsl(from var(--dark-background-color) h s l / 0.4);
+}
+
+.site-modal::backdrop {
+	background: rgba(0, 0, 0, 0.6);
+}
+
+.site-modal__wrap {
+	background: #fff;
+	border-radius: 8px;
+	padding: 20px 28px 20px 20px;
+	position: relative;
+	max-height: 96vh;
+	overflow: hidden;
+}
+
+.site-modal__close {
+	position: absolute;
+	top: 0px;
+	right: 4px;
+	background: transparent;
+	border: 0;
+	font-size: 40px;
+	line-height: 1;
+	cursor: pointer;
+}
+
+.modal-loader {
+	padding: 40px 20px;
+	text-align: center;
+}
+
+.modal-error {
+	padding: 20px;
+	color: #900;
+	text-align: center;
+}
+
+/* hidden container style - default for any content intended for modal */
+.dialog-content {
+	display: none;
+}
+
+/* embed iframe for Google Forms */
+.modal-iframe {
+	width: 100%;
+	height: 88vh;
+	border: none;
+}
+
+
+@media (max-width: 768px) {
+	.site-modal__wrap {
+		padding: 20px 18px 10px 10px;
+	}
+
+	.site-modal__close {
+		font-size: 32px;
+	}
+}
