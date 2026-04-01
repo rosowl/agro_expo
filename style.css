@@ -1123,7 +1123,28 @@ BlankSlate is distributed under the terms of the GNU GPL
 		display: none;
 	}
 
+	.hero-banner-image {
+		position: relative;
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		z-index: 0;
+		display: none;
+	}
+
+	.hero-banner-image--desktop {
+		display: block;
+	}
+
 	@media (max-width: 768px) {
+		.hero-banner-image--desktop {
+			display: none;
+		}
+
+		.hero-banner-image--mobile {
+			display: block;
+		}
+
 		.section--hero_banner--video video.hero-banner-video--desktop {
 			display: none;
 		}
