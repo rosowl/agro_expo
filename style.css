@@ -1098,31 +1098,7 @@ BlankSlate is distributed under the terms of the GNU GPL
 		background: #000;
 	}
 
-	.section--hero_banner--video video.hero-banner-video {
-		position: relative;
-		inset: 0;
-		width: 100%;
-		height: 100%;
-		object-fit: cover;
-		pointer-events: none;
-		z-index: 0;
-		display: none;
-	}
-
-	.section--hero_banner--video video.hero-banner-video--desktop {
-		display: block;
-	}
-
-	@media (min-aspect-ratio: 2/1) {
-		.section--hero_banner--video video.hero-banner-video--desktop {
-			aspect-ratio: 2 / 1;
-		}
-	}
-
-	.section--hero_banner--video video.hero-banner-video--mobile {
-		display: none;
-	}
-
+	.hero-banner-video,
 	.hero-banner-image {
 		position: relative;
 		width: 100%;
@@ -1132,24 +1108,26 @@ BlankSlate is distributed under the terms of the GNU GPL
 		display: none;
 	}
 
-	.hero-banner-image--desktop {
+	.hero-banner-image--desktop,
+	.hero-banner-video--desktop {
 		display: block;
 	}
 
+	@media (min-aspect-ratio: 2/1) {
+		.hero-banner-video--desktop {
+			aspect-ratio: 2;
+		}
+	}
+
 	@media (max-width: 768px) {
-		.hero-banner-image--desktop {
+
+		.hero-banner-image--desktop,
+		.hero-banner-video--desktop {
 			display: none;
 		}
 
-		.hero-banner-image--mobile {
-			display: block;
-		}
-
-		.section--hero_banner--video video.hero-banner-video--desktop {
-			display: none;
-		}
-
-		.section--hero_banner--video video.hero-banner-video--mobile {
+		.hero-banner-image--mobile,
+		.hero-banner-video--mobile {
 			display: block;
 			min-height: 90vh;
 		}
