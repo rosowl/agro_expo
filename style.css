@@ -397,6 +397,14 @@ BlankSlate is distributed under the terms of the GNU GPL
 		}
 	}
 
+	.section {
+		width: 100%;
+		box-sizing: border-box;
+		position: relative;
+		padding-block: var(--section-padding);
+		z-index: 1;
+	}
+
 	.container {
 		width: 100%;
 		box-sizing: border-box;
@@ -421,7 +429,6 @@ BlankSlate is distributed under the terms of the GNU GPL
 		.container {
 			padding: 0 var(--spacing-md);
 		}
-
 	}
 
 	@media (max-width: 768px) {
@@ -1079,13 +1086,11 @@ BlankSlate is distributed under the terms of the GNU GPL
 
 	/* Hero Banner */
 
-	.section--hero_banner {
-		position: relative;
-		padding-block: var(--section-padding);
+	.section.section--hero_banner {
+		padding-block: 0;
 		background-size: cover;
 		background-position: center;
 		height: auto;
-		min-height: 90vh;
 		overflow: hidden;
 	}
 
@@ -1094,7 +1099,7 @@ BlankSlate is distributed under the terms of the GNU GPL
 	}
 
 	.section--hero_banner--video video.hero-banner-video {
-		position: absolute;
+		position: relative;
 		inset: 0;
 		width: 100%;
 		height: 100%;
@@ -1106,6 +1111,12 @@ BlankSlate is distributed under the terms of the GNU GPL
 
 	.section--hero_banner--video video.hero-banner-video--desktop {
 		display: block;
+	}
+
+	@media (min-aspect-ratio: 2/1) {
+		.section--hero_banner--video video.hero-banner-video--desktop {
+			aspect-ratio: 2 / 1;
+		}
 	}
 
 	.section--hero_banner--video video.hero-banner-video--mobile {
@@ -1123,10 +1134,14 @@ BlankSlate is distributed under the terms of the GNU GPL
 	}
 
 	.hero__inner {
+		position: absolute;
+		top: 0;
+		height: 100%;
+		max-height: 95vh;
+		z-index: 2;
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
-		height: auto;
 		min-height: inherit;
 		color: var(--white-color);
 	}
@@ -2829,15 +2844,6 @@ BlankSlate is distributed under the terms of the GNU GPL
 			--section-padding: 30px;
 		}
 	}
-
-	.section {
-		width: 100%;
-		box-sizing: border-box;
-		position: relative;
-		padding-block: var(--section-padding);
-		z-index: 1;
-	}
-
 
 	/* Динамические переменные (используют десктоп по умолчанию) */
 	.section--slope-left {

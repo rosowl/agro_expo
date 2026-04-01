@@ -42,8 +42,7 @@ $section_id = get_query_var('section_id');
 ?>
 <section id="<?php echo esc_attr($section_id); ?>"
 	class="section section--hero_banner<?php echo ($desktop_is_video || $mobile_is_video) ? ' section--hero_banner--video' : ''; ?>"
-	<?php if (! $desktop_is_video && $desktop_url): ?>style="background-image:url('<?php echo esc_url($desktop_url); ?>');"
-	<?php endif; ?>>
+	<?php if (! $desktop_is_video && $desktop_url): ?>style="background-image:url('<?php echo esc_url($desktop_url); ?>'); background-size: cover; background-position: center; background-repeat: no-repeat" <?php endif; ?>>
 	<?php if ($desktop_is_video && $desktop_url): ?>
 		<video class="hero-banner-video hero-banner-video--desktop" autoplay muted loop playsinline preload="metadata" poster="<?php echo $poster_url_desktop; ?>">
 			<source src="<?php echo esc_url($desktop_url); ?>" type="<?php echo esc_attr($desktop_mime ?: 'video/mp4'); ?>">
