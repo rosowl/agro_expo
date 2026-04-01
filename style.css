@@ -1080,12 +1080,9 @@ BlankSlate is distributed under the terms of the GNU GPL
 	/* Hero Banner */
 
 	.section--hero_banner {
-		position: relative;
-		padding-block: var(--section-padding);
-		background-size: cover;
+		padding-block: 0 background-size: cover;
 		background-position: center;
 		height: auto;
-		min-height: 90vh;
 		overflow: hidden;
 	}
 
@@ -1094,7 +1091,7 @@ BlankSlate is distributed under the terms of the GNU GPL
 	}
 
 	.section--hero_banner--video video.hero-banner-video {
-		position: absolute;
+		position: relative;
 		inset: 0;
 		width: 100%;
 		height: 100%;
@@ -1123,10 +1120,14 @@ BlankSlate is distributed under the terms of the GNU GPL
 	}
 
 	.hero__inner {
+		position: absolute;
+		top: 0;
+		height: 100%;
+		max-height: 95vh;
+		z-index: 2;
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
-		height: auto;
 		min-height: inherit;
 		color: var(--white-color);
 	}
