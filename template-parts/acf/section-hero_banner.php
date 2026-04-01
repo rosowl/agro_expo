@@ -41,28 +41,22 @@ $phone_url  = preg_replace('/[^0-9]/', '', $phone);
 $section_id = get_query_var('section_id');
 ?>
 <section id="<?php echo esc_attr($section_id); ?>"
-	class="section section--hero_banner<?php echo ($desktop_is_video || $mobile_is_video) ? ' section--hero_banner--video' : ''; ?>"
-	<?php if (! $desktop_is_video && $desktop_url): ?>style="background-image:url('<?php echo esc_url($desktop_url); ?>'); background-size: cover; background-position: center; background-repeat: no-repeat" <?php endif; ?>>
+	class="section section--hero_banner<?php echo ($desktop_is_video || $mobile_is_video) ? ' section--hero_banner--video' : ''; ?>">
 	<?php if ($desktop_is_video && $desktop_url): ?>
-		<video class="hero-banner-video hero-banner-video--desktop" autoplay muted loop playsinline preload="metadata" poster="<?php echo $poster_url_desktop; ?>">
+		<video class=" hero-banner-video hero-banner-video--desktop" autoplay muted loop playsinline preload="metadata" poster="<?php echo $poster_url_desktop; ?>">
 			<source src="<?php echo esc_url($desktop_url); ?>" type="<?php echo esc_attr($desktop_mime ?: 'video/mp4'); ?>">
 			<?php echo esc_html__('Your browser does not support the video tag.', 'blankslate'); ?>
 		</video>
+	<?php elseif ($desktop_url): ?>
+		<img class="hero-banner-image hero-banner-image--desktop" src="<?php echo esc_url($desktop_url); ?>" alt="<?php echo esc_attr__('Hero banner', 'blankslate'); ?>" />
 	<?php endif; ?>
 	<?php if ($mobile_is_video && $mobile_url): ?>
 		<video class="hero-banner-video hero-banner-video--mobile" autoplay muted loop playsinline preload="metadata" poster="<?php echo $poster_url_mobile; ?>">
 			<source src="<?php echo esc_url($mobile_url); ?>" type="<?php echo esc_attr($mobile_mime ?: 'video/mp4'); ?>">
 			<?php echo esc_html__('Your browser does not support the video tag.', 'blankslate'); ?>
 		</video>
-	<?php endif; ?>
-	<?php if (! $mobile_is_video && $mobile_url): ?>
-		<style>
-			@media (max-width: 767px) {
-				.section--hero_banner {
-					background-image: url('<?php echo esc_url($mobile_url); ?>') !important;
-				}
-			}
-		</style>
+	<?php elseif ($mobile_url): ?>
+		<img class="hero-banner-image hero-banner-image--mobile" src="<?php echo esc_url($mobile_url); ?>" alt="<?php echo esc_attr__('Hero banner', 'blankslate'); ?>" />
 	<?php endif; ?>
 	<div class="w-full hero__inner">
 		<div class="hero__content hero__content--left owl" data-animation="slideInLeft">
