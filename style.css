@@ -1114,6 +1114,8 @@ BlankSlate is distributed under the terms of the GNU GPL
 	}
 
 	@media (min-aspect-ratio: 2/1) {
+
+		.hero-banner-image--desktop,
 		.hero-banner-video--desktop {
 			aspect-ratio: 2;
 		}
