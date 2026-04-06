@@ -5,7 +5,7 @@
 		display: flex;
 		align-items: center;
 		justify-content: center;
-		min-height: calc(100vh - 160px);
+		min-height: calc(100vh - 560px);
 		box-sizing: border-box;
 		margin: 0;
 	}
@@ -119,7 +119,7 @@
 	/* Для дуже маленьких екранів — ще компактніше */
 	@media (max-width: 550px) {
 		.agro-404-wrapper {
-			min-height: calc(100vh - 120px);
+			min-height: calc(100vh - 220px);
 			padding: 0.8rem;
 		}
 
@@ -170,7 +170,7 @@
 			</div>
 			<div class="agro-divider"></div>
 			<div class="agro-message">
-				Такої сторінки не існує.
+				Такої сторінки не існує
 			</div>
 
 			<a heref="/" class="agro-btn" id="returnHomeBtn">
