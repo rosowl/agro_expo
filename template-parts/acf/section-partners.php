@@ -62,7 +62,7 @@ $maket_title = get_sub_field('maket_title') ?: '';
 							<?php endif; ?>
 
 							<?php if ($button_text && $button_link): ?>
-								<a class="btn btn--brand" href="<?php echo esc_url($button_link); ?>"><?php echo esc_html($button_text); ?></a>
+								<a class="btn btn--brand" href="<?php echo esc_url($button_link); ?>" target="_blank" rel="noopener noreferrer"><?php echo esc_html($button_text); ?></a>
 							<?php endif; ?>
 						</div>
 					</div>
@@ -108,7 +108,7 @@ $maket_title = get_sub_field('maket_title') ?: '';
 
 							<?php if ($button_text && $button_link): ?>
 								<a class="btn btn--secondary"
-									href="<?php echo esc_url($button_link); ?>"><?php echo esc_html($button_text); ?></a>
+									href="<?php echo esc_url($button_link); ?>" target="_blank" rel="noopener noreferrer"><?php echo esc_html($button_text); ?></a>
 							<?php endif; ?>
 						</div>
 					</div>
@@ -134,7 +134,7 @@ $maket_title = get_sub_field('maket_title') ?: '';
 
 								?>
 								<?php if ($partner_link): ?>
-									<a href="<?php echo esc_url($partner_link); ?>" class="partner-other">
+									<a href="<?php echo esc_url($partner_link); ?>" class="partner-other" target="_blank" rel="noopener noreferrer">
 										<?php if ($logo_url): ?>
 											<div class="partner-other__logo-wrapper">
 												<img class="partner-other__logo" src="<?php echo esc_url($logo_url); ?>"
