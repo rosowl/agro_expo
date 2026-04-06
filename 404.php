@@ -173,7 +173,7 @@
 				Такої сторінки не існує
 			</div>
 
-			<a heref="/" class="agro-btn" id="returnHomeBtn">
+			<a href="/" class="agro-btn" id="returnHomeBtn">
 				<span>🌾</span>
 				На головну
 				<span class="btn-icon">🚜</span>
