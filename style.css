@@ -511,6 +511,15 @@ BlankSlate is distributed under the terms of the GNU GPL
 
 /* Компоненты */
 @layer components {
+
+	.entry-meta {
+		margin-block: 1em;
+	}
+
+	ul.wp-block-list {
+		margin: 1em 0 1em 1em;
+	}
+
 	.btn {
 		display: inline-flex;
 		justify-content: center;
