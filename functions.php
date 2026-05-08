@@ -9,7 +9,7 @@ function blankslate_setup()
     add_theme_support('title-tag');
     add_theme_support('automatic-feed-links');
     add_theme_support('post-thumbnails');
-    add_theme_support('custom-logo');
+    // Removed custom logo support to avoid Customizer logo upload crash.
     add_theme_support('html5', ['search-form', 'gallery', 'caption', 'style', 'script', 'navigation-widgets']);
     add_theme_support('responsive-embeds');
     add_theme_support('align-wide');
