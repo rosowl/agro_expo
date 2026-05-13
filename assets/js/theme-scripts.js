@@ -399,7 +399,10 @@ function initGallerySplide(mainGallery) {
     });
 
     document.addEventListener('click', function(event) {
-        if (event.ctrlKey && event.altKey) {
+        const isMac = /Mac|iPhone|iPad|iPod/.test(navigator.platform);
+        const modifierPressed = isMac ? (event.metaKey && event.altKey) : (event.ctrlKey && event.altKey);
+        
+        if (modifierPressed) {
 						event.preventDefault();
             event.stopPropagation();
             event.stopImmediatePropagation();
